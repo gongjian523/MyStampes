@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MyStampes.AddrBook;
+using MyStampes.Log;
 
 namespace MyStampes
 {
@@ -22,43 +24,25 @@ namespace MyStampes
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private LogView logView = new LogView();
+        private AddrBookView addrBookView = new AddrBookView();
+
         public MainWindow()
         {
             InitializeComponent();
+            ContentFrame.Navigate(logView);
         }
 
-        private void Export_Log(object sender, RoutedEventArgs e)
+        private void EnterLog(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "数据库(*.db)|*.db|Excel(*.xlsx)|*.xlsx"; // Filter files by extension
-
-            if(ofd.ShowDialog() == true)
-            {
-                Debug.Print("OPEN xlsx or db");
-                LoadExcleFile();
-            }
+            ContentFrame.Navigate(logView);
         }
 
-        private void LoadExcleFile()
+        private void EnterAddrBook(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
-        }
-
-        private void Save_Log(object sender, RoutedEventArgs e)
-        {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "数据库(*.db)|*.db"; // Filter files by extension
-
-            if (sfd.ShowDialog() == true)
-            {
-                Debug.Print("Save as DB");
-                SaveLogToDB();
-            }
-        }
-
-        private void SaveLogToDB()
-        {
-            throw new NotImplementedException();
+            ContentFrame.Navigate(addrBookView);
         }
     }
+
 }
