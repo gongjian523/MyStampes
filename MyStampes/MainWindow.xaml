@@ -1,0 +1,28 @@
+﻿<Window x:Class="MyStampes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MyStampes" Height="500" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="0">
+            <Button Width="100" Margin="0,3,0,3" Click="Export_Log">导入记录</Button>
+            <Button Width="100" Margin="3,3,0,3" Click="Save_Log">保存</Button>
+        </StackPanel>
+        <ListView Name="logList" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="" Width="10"/>
+                    <GridViewColumn Header="日期" Width="90"/>
+                    <GridViewColumn Header="价格" Width="100"/>
+                    <GridViewColumn Header="描述" Width="200"/>
+                    <GridViewColumn Header="来源" Width="150"/> 
+                    <GridViewColumn Header="分类" Width="100"/>
+                    <GridViewColumn Header="补充" Width="350"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
