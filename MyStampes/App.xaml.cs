@@ -14,4 +14,6 @@ namespace MyStampes
     public partial class App : Application
     {
     }
+
+    
 }
