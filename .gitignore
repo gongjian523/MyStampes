@@ -10,3 +10,6 @@ System.Data.SQLite.EF6.dll
 *.ps1
 *.dll
 /packages/*.config
+/packages/EntityFramework.6.0.0/lib/net40
+/packages/EntityFramework.6.0.0/lib/net45
+/packages/EntityFramework.6.0.0/tools
