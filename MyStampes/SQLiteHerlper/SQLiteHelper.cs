@@ -41,8 +41,6 @@ namespace MyStampes.SQLiteHerlper
             cmd.CommandText = "CREATE TABLE if not exists tb_Info (\"index\" INTEGER PRIMARY KEY AUTOINCREMENT, info VARCHAR (128) DEFAULT (''), sellerId INTEGER,  purchaseData not null default (datetime(\'localtime\')),  sellerInfo VARCHAR(64) DEFAULT (''), progress INTEGER DEFAULT(0),  progressInfo VARCHAR(32) DEFAULT(''));";
             cmd.ExecuteNonQuery();
 
-            cmd.CommandText = "CREATE TABLE if not exists tb_InfoExt (\"index\" INTEGER PRIMARY KEY AUTOINCREMENT, info VARCHAR (128), infoId INTEGER);";
-            cmd.ExecuteNonQuery();
             return ;
         }
 
