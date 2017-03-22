@@ -25,18 +25,18 @@ namespace MyStampes
     public partial class MainWindow : Window
     {
 
-        private LogView logView = new LogView();
+        private LogListView logListView = new LogListView();
         private AddrBookView addrBookView = new AddrBookView();
 
         public MainWindow()
         {
             InitializeComponent();
-            ContentFrame.Navigate(logView);
+            ContentFrame.Navigate(logListView);
         }
 
-        private void EnterLog(object sender, RoutedEventArgs e)
+        private void EnterLogList(object sender, RoutedEventArgs e)
         {
-            ContentFrame.Navigate(logView);
+            ContentFrame.Navigate(logListView);
         }
 
         private void EnterAddrBook(object sender, RoutedEventArgs e)

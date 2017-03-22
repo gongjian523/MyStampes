@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace MyStampes.ViewModel
 {
-    class Log
+    class LogItem
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
 
-        public string Info { get; private set; }
+        public string Info { get; set; }
 
-        public float Price { get; private set; }
+        public float Price { get; set; }
 
-        public DateTime Date { get; private set; }
+        public DateTime Date { get; set; }
 
-        public string Status { get; private set; }
+        public string Status { get; set; }
 
-        public string SpecInfo { get; private set; }
+        public string SpecInfo { get; set; }
     }
 }

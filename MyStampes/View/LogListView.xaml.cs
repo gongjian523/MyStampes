@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyStampes.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,9 +19,9 @@ namespace MyStampes.Log
     /// <summary>
     /// Interaction logic for LogView.xaml
     /// </summary>
-    public partial class LogView : UserControl
+    public partial class LogListView : UserControl
     {
-        public LogView()
+        public LogListView()
         {
             InitializeComponent();
         }

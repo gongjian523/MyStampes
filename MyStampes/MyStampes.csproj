@@ -76,11 +76,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="SQLiteHerlper\SQLiteHelper.cs" />
+    <Compile Include="View\Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\AddrBookView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\LogView.xaml">
+    <Page Include="View\LogListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,13 +100,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\LogView.xaml.cs">
-      <DependentUpon>LogView.xaml</DependentUpon>
+    <Compile Include="View\LogListView.xaml.cs">
+      <DependentUpon>LogListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
