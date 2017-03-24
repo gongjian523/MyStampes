@@ -1,4 +1,5 @@
 ﻿using MyStampes.View;
+using MyStampes.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,18 @@ namespace MyStampes.AddrBook
         public AddrBookView()
         {
             InitializeComponent();
+            DataContext = this;
+
+            _addrList = SQLiteHerlper.SQLiteHelper.Instance.GetAllAddress();
+        }
+
+        private List<AddressItem> _addrList = new List<AddressItem>();
+        public List<AddressItem> AddrList
+        {
+            get
+            {
+                return _addrList;
+            }
         }
 
         private void AddAddrItem(object sender, RoutedEventArgs e)
