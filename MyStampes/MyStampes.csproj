@@ -76,8 +76,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="SQLiteHerlper\SQLiteHelper.cs" />
-    <Compile Include="View\Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
+    <Compile Include="View\AddAddrItemView.xaml.cs">
+      <DependentUpon>AddAddrItemView.xaml</DependentUpon>
     </Compile>
     <Page Include="View\AddrBookView.xaml">
       <SubType>Designer</SubType>
@@ -107,7 +107,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\Window1.xaml">
+    <Page Include="View\AddAddrItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

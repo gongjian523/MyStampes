@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 namespace MyStampes.ViewModel
 {
 
-    class AddressItem
+    public class AddressItem
     {
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        public string Location { get; set; }
 
         public string Addr { get; set; }
 

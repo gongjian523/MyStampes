@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyStampes.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,14 @@ namespace MyStampes.AddrBook
         {
             InitializeComponent();
         }
+
+        private void AddAddrItem(object sender, RoutedEventArgs e)
+        {
+            AddAddrItemView addAddr = new AddAddrItemView();
+            addAddr.Owner = Application.Current.MainWindow;
+            addAddr.ShowDialog(); 
+        }
+
+        
     }
 }

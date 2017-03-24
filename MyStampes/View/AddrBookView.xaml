@@ -6,20 +6,24 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Margin="20,0,20,0">
+        <Grid.Resources>
+            <DataTemplate x:Key="addrItem">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock/>
+                    <Button/>
+                    <Button/>
+                </StackPanel>
+            </DataTemplate>
+        </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="48"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Rectangle Margin="-20,0,-20,0" Fill="White" Panel.ZIndex="0" Grid.Row="0"/>
-        <TextBox Panel.ZIndex="1" Grid.Row="0" Width="100" Height="40" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-        <Button Panel.ZIndex="1" Grid.Row="0" Width="100" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <ScrollViewer Grid.Row="0">
-            </ScrollViewer>
-        </Grid>
+        <Button Panel.ZIndex="1" Grid.Row="0" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                Content="增加新联系人" FontSize="12" Click="AddAddrItem"/>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <ItemsControl ItemTemplate="{StaticResource addrItem}" ItemsSource="{Binding addrList}"/>
+        </ScrollViewer>
     </Grid>
 </UserControl>

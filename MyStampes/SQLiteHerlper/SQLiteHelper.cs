@@ -11,7 +11,7 @@ namespace MyStampes.SQLiteHerlper
 {
     public class SQLiteHelper
     {
-        public SQLiteHelper Instance
+        public static SQLiteHelper Instance
         {
             get
             {
@@ -45,6 +45,7 @@ namespace MyStampes.SQLiteHerlper
         {
             string commandText = @"CREATE TABLE if not exists tb_AddrBook ('Id' INTEGER PRIMARY KEY AUTOINCREMENT, 
                                                                         'Name' VARCHAR (32) , 
+                                                                        'Location' VARCHAR (32),
                                                                         'Addr' VARCHAR (256), 
                                                                         'AddrCode' VARCHAR(10), 
                                                                         'TelNumber' VARCHAR(20), 
@@ -62,10 +63,10 @@ namespace MyStampes.SQLiteHerlper
 
         public int InsertNewAddressItem(AddressItem addr)
         {
-            string commandText = string.Format( @"INSERT INTO tb_AddrBook (Name, Addr, AddrCode, TelNumber, Info1Title, Info1, 
-                                                Info2Title, Info2, Info3Title, Info3, Info4Title, Info4) 
-                                                VALUE ({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11})", 
-                                                addr.Name, addr.Addr, addr.AddrCode, addr.TelNumber, addr.Info1Title, addr.Info1,
+            string commandText = string.Format(@"INSERT INTO tb_AddrBook (Name, Location, Addr, AddrCode, TelNumber, Info1Title, Info1, 
+                                                Info2Title, Info2, Info3Title, Info3, Info4Title, Info4) VALUES 
+                                                ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}')", 
+                                                addr.Name, addr.Location, addr.Addr, addr.AddrCode, addr.TelNumber, addr.Info1Title, addr.Info1,
                                                 addr.Info2Title, addr.Info2, addr.Info3Title, addr.Info3, addr.Info4Tite, addr.Info4);
             
             if (!ExecuteNonQuery(commandText))
@@ -77,7 +78,7 @@ namespace MyStampes.SQLiteHerlper
 
         private int LastInsertRowId()
         {
-            return (int)ExecuteScalar("SELECT last_insert_rowid();");
+            return Convert.ToInt16(ExecuteScalar("SELECT last_insert_rowid();"));
         }
 
 

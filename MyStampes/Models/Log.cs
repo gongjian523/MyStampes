@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyStampes.ViewModel
 {
-    class LogItem
+    public class LogItem
     {
         public int Id { get; set; }
 
