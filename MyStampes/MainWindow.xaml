@@ -1,6 +1,7 @@
 ﻿<Window x:Class="MyStampes.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Name="MianWin"
         Title="MyStampes"
         Height="700"
         MinHeight="700" 
@@ -12,7 +13,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Column="0">
-            <Button Width="48" Height="48" Click="EnterLog">日志</Button>
+            <Button Width="48" Height="48" Click="EnterLogList">日志</Button>
             <Button Width="48" Height="48"  Click="EnterAddrBook">通讯录</Button>
         </StackPanel>
         <StackPanel Grid.Column="1">
