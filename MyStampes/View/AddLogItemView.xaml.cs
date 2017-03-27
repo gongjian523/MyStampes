@@ -1,6 +1,4 @@
-﻿using MyStampes.View;
-using MyStampes.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,26 +10,30 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MyStampes.Log
+namespace MyStampes.View
 {
     /// <summary>
-    /// Interaction logic for LogView.xaml
+    /// Interaction logic for AddLogItemView.xaml
     /// </summary>
-    public partial class LogListView : UserControl
+    public partial class AddLogItemView : Window
     {
-        public LogListView()
+        public AddLogItemView()
         {
             InitializeComponent();
         }
 
+
         private void AddLogItem(object sender, RoutedEventArgs e)
         {
-            AddLogItemView addLog = new AddLogItemView();
-            addLog.Owner = Application.Current.MainWindow;
-            addLog.ShowDialog();
+
+        }
+
+
+        private void EditLogItem(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

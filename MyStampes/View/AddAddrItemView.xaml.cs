@@ -57,8 +57,11 @@ namespace MyStampes.View
 
         public void EidtAddrItem(object sender, RoutedEventArgs e)
         {
-            ;
+            SQLiteHelper.Instance.UpdateAddressItem(newAddr);
+            this.Close();
         }
+
+
 
         //private void Init(bool bCanBeEdit)
         //{

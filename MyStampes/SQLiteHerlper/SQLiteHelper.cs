@@ -67,13 +67,32 @@ namespace MyStampes.SQLiteHerlper
                                                 Info2Title, Info2, Info3Title, Info3, Info4Title, Info4) VALUES 
                                                 ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}')", 
                                                 addr.Name, addr.Location, addr.Addr, addr.AddrCode, addr.TelNumber, addr.Info1Title, addr.Info1,
-                                                addr.Info2Title, addr.Info2, addr.Info3Title, addr.Info3, addr.Info4Tite, addr.Info4);
+                                                addr.Info2Title, addr.Info2, addr.Info3Title, addr.Info3, addr.Info4Title, addr.Info4);
             
             if (!ExecuteNonQuery(commandText))
                 return 0;
 
 
             return LastInsertRowId();
+        }
+
+
+        public bool UpdateAddressItem(AddressItem addr)
+        {
+            string commandText = string.Format(@"UPDATE tb_AddrBook SET Name = '{0}', Location = '{1}', Addr = '{2}', AddrCode = '{3}', 
+                                                TelNumber = '{4}', Info1Title = '{5}', Info1 = '{6}', Info2Title = '{7}', Info2 = '{8}', 
+                                                Info3Title = '{9}', Info3 = '{10}', Info4Title = '{11}', Info4 = '{12}' WHERE Id = {13}",
+                                                addr.Name, addr.Location, addr.Addr, addr.AddrCode, addr.TelNumber, addr.Info1Title, addr.Info1,
+                                                addr.Info2Title, addr.Info2, addr.Info3Title, addr.Info3, addr.Info4Title, addr.Info4, addr.Id);
+
+            return ExecuteNonQuery(commandText);
+        }
+
+
+        public bool DeleteAddressItem(int addrId)
+        {
+            string commandText = string.Format(@"DELETE FROM tb_AddrBook WHERE Id = {0}", addrId);
+            return ExecuteNonQuery(commandText);
         }
 
         private int LastInsertRowId()
@@ -95,7 +114,9 @@ namespace MyStampes.SQLiteHerlper
             {
                 AddressItem addr = new AddressItem();
 
+                addr.Id = Convert.ToInt16(data["Id"].ToString());
                 addr.Name = data["Name"].ToString();
+                addr.Location = data["Location"].ToString();
                 addr.Addr = data["Addr"].ToString();
                 addr.AddrCode = data["AddrCode"].ToString();
                 addr.TelNumber = data["TelNumber"].ToString();

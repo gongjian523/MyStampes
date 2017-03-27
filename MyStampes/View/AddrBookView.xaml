@@ -10,8 +10,8 @@
             <DataTemplate x:Key="addrItem">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="{Binding ShowInfo}"/>
-                    <Button Content="编辑"/>
-                    <Button Content="删除"/>
+                    <Button Content="编辑" Click="EidtAddrItem" Tag="{Binding}" />
+                    <Button Content="删除" Click="DelAddrItem" Tag="{Binding}"/>
                 </StackPanel>
             </DataTemplate>
         </Grid.Resources>
@@ -23,7 +23,7 @@
         <Button Panel.ZIndex="1" Grid.Row="0" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" 
                 Content="增加新联系人" FontSize="12" Click="AddAddrItem"/>
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-            <ItemsControl ItemTemplate="{StaticResource addrItem}" ItemsSource="{Binding AddrList}"/>
+            <ItemsControl ItemTemplate="{StaticResource addrItem}" ItemsSource="{Binding AddrList, UpdateSourceTrigger=PropertyChanged}"/>
         </ScrollViewer>
     </Grid>
 </UserControl>

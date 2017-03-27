@@ -12,7 +12,7 @@
         </Grid.RowDefinitions>
         <Rectangle Margin="-20,0,-20,0" Fill="White" Panel.ZIndex="0" Grid.Row="0"/>
         <TextBox Panel.ZIndex="1" Grid.Row="0" Width="100" Height="40" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-        <Button Panel.ZIndex="1" Grid.Row="0" Width="100" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <Button Panel.ZIndex="1" Grid.Row="0" Width="100" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AddLogItem"/>
         <ListView Grid.Row="1" >
             <ListView.ItemTemplate>
                 <DataTemplate>

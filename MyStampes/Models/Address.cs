@@ -33,7 +33,7 @@ namespace MyStampes.ViewModel
 
         public string Info3 { get; set; }
 
-        public string Info4Tite { get; set; }
+        public string Info4Title { get; set; }
 
         public string Info4 { get; set; }
 
