@@ -19,5 +19,9 @@ namespace MyStampes.ViewModel
         public string Status { get; set; }
 
         public string SpecInfo { get; set; }
+
+        public int SellerId { get; set; }
+
+        public string SellerInfo { get; set; }
     }
 }

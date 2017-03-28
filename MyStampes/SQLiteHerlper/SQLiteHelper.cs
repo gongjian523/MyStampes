@@ -32,7 +32,8 @@ namespace MyStampes.SQLiteHerlper
             string commandText = @"CREATE TABLE if not exists tb_Log ('Id' INTEGER PRIMARY KEY AUTOINCREMENT, 
                                                                    'Info' VARCHAR (256) DEFAULT (''), 
                                                                    'Price' FLOAT,
-                                                                   'SellerId' INTEGER,  
+                                                                   'SellerId' INTEGER, 
+                                                                   'SellerInfo' VARCHAR(128),  
                                                                    'Date' not null default (datetime('localtime')),  
                                                                    'Status' VARCHAR(32) DEFAULT(''),
                                                                    'SpecInfo' VARCHAR(1024));";
@@ -92,6 +93,37 @@ namespace MyStampes.SQLiteHerlper
         public bool DeleteAddressItem(int addrId)
         {
             string commandText = string.Format(@"DELETE FROM tb_AddrBook WHERE Id = {0}", addrId);
+            return ExecuteNonQuery(commandText);
+        }
+
+
+        public int InsertNewLogItem(LogItem log)
+        {
+            string commandText = string.Format(@"INSERT INTO tb_Log (Info, Price, SellerId, SellerInfo, Date, Status, SpecInfo) VALUES 
+                                                ('{0}', {1}, '{2}', '{3}', '{4}', '{5}', '{6}')",
+                                                log.Info, log.Price, log.SellerId, log.SellerInfo, log.Date, log.Status, log.SpecInfo);
+
+            if (!ExecuteNonQuery(commandText))
+                return 0;
+
+
+            return LastInsertRowId();
+        }
+
+
+        public bool UpdateLogItem(LogItem log)
+        {
+            string commandText = string.Format(@"UPDATE tb_Log SET Info = '{0}', Location = {1}, SellerId = {2}, SellerInfo = '{3}', 
+                                                Date = '{4}', Status = '{5}', SpecInfo = '{6}'  WHERE Id = {7}",
+                                                log.Info, log.Price, log.SellerId, log.SellerInfo, log.Date, log.Status, log.SpecInfo, log.Id);
+
+            return ExecuteNonQuery(commandText);
+        }
+
+
+        public bool DeleteLogItem(int logId)
+        {
+            string commandText = string.Format(@"DELETE FROM tb_Log WHERE Id = {0}", logId);
             return ExecuteNonQuery(commandText);
         }
 
