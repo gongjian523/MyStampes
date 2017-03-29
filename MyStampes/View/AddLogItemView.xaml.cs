@@ -37,6 +37,8 @@ namespace MyStampes.View
         {
             InitializeComponent();
 
+
+
             newLog = new LogItem();
             oldLog = new LogItem();
 
@@ -45,23 +47,27 @@ namespace MyStampes.View
                 oldLog = log;
                 newLog = log;
 
-
                 TitleTB.Text = "编辑日志";
+
+                dateDP.SelectedDate = newLog.Date;
+                SellerCB.SelectedValue = newLog.SellerId;
+
                 AddLogItemBtn.Visibility = Visibility.Collapsed;
                 EditLogItemBtn.Visibility = Visibility.Visible;
             }
             else
             {
                 TitleTB.Text = "新增日志";
+
                 AddLogItemBtn.Visibility = Visibility.Visible;
                 EditLogItemBtn.Visibility = Visibility.Collapsed;
             }
-            
 
-            this.DataContext = log;
+            this.DataContext = newLog;
 
             List<AddressItem> addrList = SQLiteHelper.Instance.GetAllAddress();
-            addrList.ForEach(addr => {
+            addrList.ForEach(addr =>
+            {
                 _sellerList.Add(new Seller { Id = addr.Id, Brief = addr.Name });
             });
 
@@ -70,23 +76,6 @@ namespace MyStampes.View
             SellerCB.SelectedValuePath = "Id";
             SellerCB.DisplayMemberPath = "Brief";
         }
-
-
-        //private Seller _selectSeller;
-        //public Seller SelectSeller
-        //{
-        //    get
-        //    {
-        //        return _selectSeller;
-        //    }
-        //    set
-        //    {
-        //        _selectSeller = value;
-        //        if (this.PropertyChanged != null)
-        //            PropertyChanged(this, new PropertyChangedEventArgs("SelectSeller"));
-        //    }
-        //}
-
 
         private ObservableCollection<Seller> _sellerList = new ObservableCollection<Seller>();
         public ObservableCollection<Seller> SellerList
@@ -101,6 +90,7 @@ namespace MyStampes.View
         private void AddLogItem(object sender, RoutedEventArgs e)
         {
 
+            newLog.Date = Convert.ToDateTime(dateDP.SelectedDate);
 
             newLog.SellerId = Convert.ToInt32(SellerCB.SelectedValue);
             newLog.SellerInfo = SellerList.FirstOrDefault(sell => sell.Id == newLog.SellerId).Brief;
@@ -112,7 +102,8 @@ namespace MyStampes.View
 
         private void EditLogItem(object sender, RoutedEventArgs e)
         {
-
+            SQLiteHelper.Instance.UpdateLogItem(newLog);
+            this.Close();
         }
     }
 }

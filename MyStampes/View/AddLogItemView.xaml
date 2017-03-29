@@ -23,7 +23,7 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <TextBlock Width="40" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left" Text="日期"  FontSize="18" />
-                    <DatePicker Margin="45,0,15,0" FontSize="18"  HorizontalAlignment="Stretch" />
+                    <DatePicker x:Name="dateDP" Margin="45,0,15,0" FontSize="18"  HorizontalAlignment="Stretch" />
                 </Grid>
                 <Grid Grid.Column="1" >
                     <TextBlock Width="40" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left" Text="卖家"  FontSize="18" />

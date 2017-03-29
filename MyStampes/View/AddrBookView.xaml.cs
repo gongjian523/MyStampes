@@ -50,7 +50,8 @@ namespace MyStampes.AddrBook
         {
             AddAddrItemView addAddr = new AddAddrItemView();
             addAddr.Owner = Application.Current.MainWindow;
-            addAddr.ShowDialog(); 
+            addAddr.ShowDialog();
+            InitData();
         }
 
 
@@ -59,7 +60,8 @@ namespace MyStampes.AddrBook
             AddressItem adr = (AddressItem)((Button)sender).Tag;
             AddAddrItemView addAddr = new AddAddrItemView(adr);
             addAddr.Owner = Application.Current.MainWindow;
-            addAddr.ShowDialog(); 
+            addAddr.ShowDialog();
+            InitData();
         }
 
 

@@ -96,43 +96,6 @@ namespace MyStampes.SQLiteHerlper
             return ExecuteNonQuery(commandText);
         }
 
-
-        public int InsertNewLogItem(LogItem log)
-        {
-            string commandText = string.Format(@"INSERT INTO tb_Log (Info, Price, SellerId, SellerInfo, Date, Status, SpecInfo) VALUES 
-                                                ('{0}', {1}, '{2}', '{3}', '{4}', '{5}', '{6}')",
-                                                log.Info, log.Price, log.SellerId, log.SellerInfo, log.Date, log.Status, log.SpecInfo);
-
-            if (!ExecuteNonQuery(commandText))
-                return 0;
-
-
-            return LastInsertRowId();
-        }
-
-
-        public bool UpdateLogItem(LogItem log)
-        {
-            string commandText = string.Format(@"UPDATE tb_Log SET Info = '{0}', Location = {1}, SellerId = {2}, SellerInfo = '{3}', 
-                                                Date = '{4}', Status = '{5}', SpecInfo = '{6}'  WHERE Id = {7}",
-                                                log.Info, log.Price, log.SellerId, log.SellerInfo, log.Date, log.Status, log.SpecInfo, log.Id);
-
-            return ExecuteNonQuery(commandText);
-        }
-
-
-        public bool DeleteLogItem(int logId)
-        {
-            string commandText = string.Format(@"DELETE FROM tb_Log WHERE Id = {0}", logId);
-            return ExecuteNonQuery(commandText);
-        }
-
-        private int LastInsertRowId()
-        {
-            return Convert.ToInt16(ExecuteScalar("SELECT last_insert_rowid();"));
-        }
-
-
         public List<AddressItem> GetAllAddress()
         {
             List<AddressItem> addrList = new List<AddressItem>();
@@ -142,7 +105,7 @@ namespace MyStampes.SQLiteHerlper
                 return addrList;
 
 
-            while(data.Read())
+            while (data.Read())
             {
                 AddressItem addr = new AddressItem();
 
@@ -164,7 +127,72 @@ namespace MyStampes.SQLiteHerlper
                 addrList.Add(addr);
             }
 
-            return addrList;  
+            return addrList;
+        }
+
+
+        public int InsertNewLogItem(LogItem log)
+        {
+            string commandText = string.Format(@"INSERT INTO tb_Log (Info, Price, SellerId, SellerInfo, Date, Status, SpecInfo) VALUES 
+                                                ('{0}', {1}, '{2}', '{3}', '{4}', '{5}', '{6}')",
+                                                log.Info, log.Price, log.SellerId, log.SellerInfo, log.Date, log.Status, log.SpecInfo);
+
+            if (!ExecuteNonQuery(commandText))
+                return 0;
+
+
+            return LastInsertRowId();
+        }
+
+
+        public bool UpdateLogItem(LogItem log)
+        {
+            string commandText = string.Format(@"UPDATE tb_Log SET Info = '{0}', Price = {1}, SellerId = {2}, SellerInfo = '{3}', 
+                                                Date = '{4}', Status = '{5}', SpecInfo = '{6}'  WHERE Id = {7}",
+                                                log.Info, log.Price, log.SellerId, log.SellerInfo, log.Date, log.Status, log.SpecInfo, log.Id);
+
+            return ExecuteNonQuery(commandText);
+        }
+
+
+        public bool DeleteLogItem(int logId)
+        {
+            string commandText = string.Format(@"DELETE FROM tb_Log WHERE Id = {0}", logId);
+            return ExecuteNonQuery(commandText);
+        }
+
+
+        public List<LogItem> GetAllLog()
+        {
+            List<LogItem> logList = new List<LogItem>();
+            IDataReader data = ExecuteReader(@"SELECT * FROM tb_Log");
+
+            if (data == null)
+                return logList;
+
+
+            while (data.Read())
+            {
+                LogItem addr = new LogItem();
+
+                addr.Id = Convert.ToInt16(data["Id"].ToString());
+                addr.Info = data["Info"].ToString();
+                addr.Price = (float)Convert.ToDouble(data["Price"].ToString());
+                addr.SellerId = Convert.ToInt16(data["SellerId"].ToString());
+                addr.SellerInfo = data["SellerInfo"].ToString();
+                addr.Date = Convert.ToDateTime(data["Date"]);
+                addr.Status = data["Status"].ToString();
+                addr.SpecInfo = data["SpecInfo"].ToString();
+
+                logList.Add(addr);
+            }
+
+            return logList;
+        }
+
+        private int LastInsertRowId()
+        {
+            return Convert.ToInt16(ExecuteScalar("SELECT last_insert_rowid();"));
         }
 
         static private SQLiteHelper iInstance = new SQLiteHelper();

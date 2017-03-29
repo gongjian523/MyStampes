@@ -9,11 +9,11 @@
         <Grid.Resources>
             <DataTemplate x:Key="logItem">
                 <Grid Height="30" Margin="0,0,0,5">
-                    <TextBlock />
-                    <TextBlock/>
-                    <TextBlock/>
-                    <Button/>
-                    <Button/>
+                    <TextBlock Text="{Binding Date}"/>
+                    <TextBlock Text="{Binding Info}"/>
+                    <TextBlock Text="{Binding Status}"/>
+                    <Button Content="编辑" Click="EidtLogItem" Tag="{Binding}"/>
+                    <Button Content="删除" Click="DelLogItem" Tag="{Binding}" VerticalContentAlignment="Center" HorizontalAlignment="Right"/>
                 </Grid>
             </DataTemplate>
         </Grid.Resources>
