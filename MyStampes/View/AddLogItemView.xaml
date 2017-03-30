@@ -55,7 +55,7 @@
             <TextBox Margin="0,5,5,0" Height="40" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" FontSize="16" Text="{Binding SpecInfo}"/>
         </StackPanel>
 
-        <TextBlock Grid.Row="2" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red"  Text="{Binding Waring}"/>
+        <TextBlock x:Name="WarningTB" Grid.Row="2" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red"  />
         <Button x:Name="AddLogItemBtn" Grid.Row="3" Height="30" Width="100" Content="增加" FontSize="16" Click="AddLogItem"/>
         <Button x:Name="EditLogItemBtn" Grid.Row="3" Height="30" Width="100"  Content="编辑" FontSize="16" Click="EditLogItem" />
     </Grid>
