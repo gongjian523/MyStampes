@@ -7,17 +7,24 @@
         MinHeight="700" 
         Width="1000"
         MinWidth ="1000">
-    <Grid>
+    <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="48"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Column="0">
-            <Button Width="48" Height="48" Click="EnterLogList">日志</Button>
-            <Button Width="48" Height="48"  Click="EnterAddrBook">通讯录</Button>
-        </StackPanel>
-        <StackPanel Grid.Column="1">
-            <Frame x:Name="ContentFrame" NavigationUIVisibility="Hidden" />
-        </StackPanel>
+        <Grid >
+            <Grid VerticalAlignment="Top" >
+                <Button Width="48" Height="48" VerticalAlignment="Top" Click="EnterLogList">日志</Button>
+                <Button Width="48" Height="48" Margin="0,47,0,0" VerticalAlignment="Top" Click="EnterAddrBook">通讯录</Button>
+            </Grid>
+            <Rectangle Width="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Fill="Gray"/>
+        </Grid>
+        <Grid Grid.Column="1">
+
+            <Rectangle Height="1" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Fill="Gray"/>
+            <Grid Grid.Row="1" Margin="0,1,0,0" HorizontalAlignment="Stretch" >
+                <Frame x:Name="ContentFrame" NavigationUIVisibility="Hidden" Panel.ZIndex="0"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

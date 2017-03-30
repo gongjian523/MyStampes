@@ -8,13 +8,22 @@
     <Grid Margin="20,0,20,0">
         <Grid.Resources>
             <DataTemplate x:Key="logItem">
-                <Grid Height="30" Margin="0,0,0,5">
-                    <TextBlock Text="{Binding Date}"/>
-                    <TextBlock Text="{Binding Info}"/>
-                    <TextBlock Text="{Binding Status}"/>
-                    <Button Content="编辑" Click="EidtLogItem" Tag="{Binding}"/>
-                    <Button Content="删除" Click="DelLogItem" Tag="{Binding}" VerticalContentAlignment="Center" HorizontalAlignment="Right"/>
-                </Grid>
+                <Border Height="36" Margin="0,0,0,5" Background="LightGray" BorderThickness="1" BorderBrush="Black">
+                    <Grid >
+                        <TextBlock Margin="5,0,0,0" Width="90"  VerticalAlignment="Center" HorizontalAlignment="Left" 
+                                   Text="{Binding Date, StringFormat={}{0:yyyy/MM/dd}}" FontSize="16"/>
+                        <TextBlock Margin="100,0,186,0" VerticalAlignment="Center"  HorizontalAlignment="Stretch" 
+                                   Text="{Binding Info}" FontSize="16"/>
+                        <TextBlock Margin="0,0,101,0" VerticalAlignment="Center" HorizontalAlignment="Right"  Width="80"    
+                                   Text="{Binding Price, StringFormat={}{0:}元 }" FontSize="16"/>
+                        <Button  Margin="0,0,51,0"  VerticalAlignment="Center" HorizontalAlignment="Right"  Width="50"  Height="34" 
+                                 BorderThickness="0" Background="LightGray" Foreground="Green" 
+                                 Content="编辑" FontSize="16" Click="EidtLogItem" Tag="{Binding}" />
+                        <Button  Margin="0,0,1,0" VerticalAlignment="Center" HorizontalAlignment="Right"  Width="50"  Height="34" 
+                                 BorderThickness="0" Background="LightGray" Foreground="Red"
+                                 Content="删除"  FontSize="16" Click="DelLogItem" Tag="{Binding}" />
+                    </Grid>
+                </Border>
             </DataTemplate>
         </Grid.Resources>
         <Grid.RowDefinitions>
@@ -23,8 +32,8 @@
         </Grid.RowDefinitions>
         <Rectangle Margin="-20,0,-20,0" Fill="White" Panel.ZIndex="0" Grid.Row="0"/>
         <Button Panel.ZIndex="1" Grid.Row="0" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right"  
-                Content="新增日志"  FontSize="12" Click="AddLogItem"/>
-        <ScrollViewer Grid.Row="1">
+                Content="新增日志"  FontSize="16" Click="AddLogItem"/>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
             <ItemsControl ItemTemplate="{StaticResource logItem}" ItemsSource="{Binding LogList}"/>
         </ScrollViewer>
     </Grid>

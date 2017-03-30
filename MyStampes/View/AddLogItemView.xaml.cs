@@ -86,14 +86,24 @@ namespace MyStampes.View
             }
         }
 
+        private string _warning;
+        public string Warning
+        {
+            get
+            {
+                return _warning;
+            }
+            set
+            {
+                _warning = value;      
+            }
+        }
+
 
         private void AddLogItem(object sender, RoutedEventArgs e)
         {
-
-            newLog.Date = Convert.ToDateTime(dateDP.SelectedDate);
-
-            newLog.SellerId = Convert.ToInt32(SellerCB.SelectedValue);
-            newLog.SellerInfo = SellerList.FirstOrDefault(sell => sell.Id == newLog.SellerId).Brief;
+            if (!IsInfoValid())
+                return;
 
             SQLiteHelper.Instance.InsertNewLogItem(newLog);
             this.Close();
@@ -102,8 +112,36 @@ namespace MyStampes.View
 
         private void EditLogItem(object sender, RoutedEventArgs e)
         {
+            if (!IsInfoValid())
+                return;
+
             SQLiteHelper.Instance.UpdateLogItem(newLog);
             this.Close();
+        }
+
+
+        private bool IsInfoValid()
+        {
+            string dateStr = Convert.ToDateTime(dateDP.SelectedDate).ToString();
+
+            if (string.IsNullOrEmpty(dateStr) || string.IsNullOrWhiteSpace(dateStr))
+            {
+                Warning = "请选择日期！";
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(newLog.Info) || string.IsNullOrWhiteSpace(newLog.Info))
+            {
+                Warning = "请填写简介！";
+                return false;
+            }
+
+            newLog.Date = Convert.ToDateTime(dateDP.SelectedDate);
+
+            newLog.SellerId = Convert.ToInt32(SellerCB.SelectedValue);
+            newLog.SellerInfo = SellerList.FirstOrDefault(sell => sell.Id == newLog.SellerId).Brief;
+
+            return true;
         }
     }
 }

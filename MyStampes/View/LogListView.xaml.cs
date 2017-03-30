@@ -68,6 +68,10 @@ namespace MyStampes.Log
 
         private void DelLogItem(object sender, RoutedEventArgs e)
         {
+
+            if (MessageBoxResult.Cancel == MessageBox.Show(Application.Current.MainWindow, "确认删除此条日志？", "警告", MessageBoxButton.OKCancel))
+                return;
+
             LogItem log = (LogItem)((Button)sender).Tag;
             SQLiteHelper.Instance.DeleteLogItem(log.Id);
             InitData();
