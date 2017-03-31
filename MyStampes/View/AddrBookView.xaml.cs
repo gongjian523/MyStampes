@@ -67,6 +67,9 @@ namespace MyStampes.AddrBook
 
         private void DelAddrItem(object sender, RoutedEventArgs e)
         {
+            if (MessageBoxResult.Cancel == MessageBox.Show(Application.Current.MainWindow, "确认删除此联系人？", "警告", MessageBoxButton.OKCancel))
+                return;
+
             AddressItem adr = (AddressItem)((Button)sender).Tag;
 
             SQLiteHelper.Instance.DeleteAddressItem(adr.Id);

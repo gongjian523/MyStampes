@@ -8,11 +8,18 @@
     <Grid Margin="20,0,20,0">
         <Grid.Resources>
             <DataTemplate x:Key="addrItem">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding ShowInfo}"/>
-                    <Button Content="编辑" Click="EidtAddrItem" Tag="{Binding}" />
-                    <Button Content="删除" Click="DelAddrItem" Tag="{Binding}"/>
-                </StackPanel>
+                <Border Height="36" Margin="0,0,0,5" Background="LightGray" BorderThickness="1" BorderBrush="Black">
+                    <Grid >
+                        <TextBlock Margin="5,0,0,0" Width="90"  VerticalAlignment="Center" HorizontalAlignment="Left" 
+                                   Text="{Binding ShowInfo}" FontSize="16"/>
+                        <Button  Margin="0,0,51,0"  VerticalAlignment="Center" HorizontalAlignment="Right"  Width="50"  Height="34" 
+                                 BorderThickness="0" Background="LightGray" Foreground="Green" 
+                                 Content="编辑" FontSize="16" Click="EidtAddrItem" Tag="{Binding}" />
+                        <Button  Margin="0,0,1,0" VerticalAlignment="Center" HorizontalAlignment="Right"  Width="50"  Height="34" 
+                                 BorderThickness="0" Background="LightGray" Foreground="Red"
+                                 Content="删除"  FontSize="16" Click="DelAddrItem" Tag="{Binding}" />
+                    </Grid>
+                </Border>
             </DataTemplate>
         </Grid.Resources>
         <Grid.RowDefinitions>

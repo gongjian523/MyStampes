@@ -37,5 +37,7 @@ namespace MyStampes.ViewModel
 
         public string Info4 { get; set; }
 
+        public string ShowInfo { get; set; }
+
     }
 }

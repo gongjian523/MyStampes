@@ -120,9 +120,19 @@ namespace MyStampes.SQLiteHerlper
                 addr.Info2Title = data["Info2Title"].ToString();
                 addr.Info2 = data["Info2"].ToString();
                 addr.Info3Title = data["Info3Title"].ToString();
-                addr.Info1 = data["Info3"].ToString();
-                addr.Info2Title = data["Info4Title"].ToString();
-                addr.Info2 = data["Info4"].ToString();
+                addr.Info3 = data["Info3"].ToString();
+                addr.Info4Title = data["Info4Title"].ToString();
+                addr.Info4 = data["Info4"].ToString();
+
+                if (!(string.IsNullOrEmpty(addr.Name) || string.IsNullOrEmpty(addr.Name)))
+                {
+                    if (!(string.IsNullOrEmpty(addr.Location) || string.IsNullOrEmpty(addr.Location)))
+                        addr.ShowInfo = addr.Location + addr.Name;
+                    else
+                        addr.ShowInfo = addr.Name;
+                }
+                else
+                    addr.ShowInfo = addr.Info1Title + addr.Info1;
 
                 addrList.Add(addr);
             }
