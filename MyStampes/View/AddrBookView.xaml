@@ -10,7 +10,7 @@
             <DataTemplate x:Key="addrItem">
                 <Border Height="36" Margin="0,0,0,5" Background="LightGray" BorderThickness="1" BorderBrush="Black">
                     <Grid >
-                        <TextBlock Margin="5,0,0,0" Width="90"  VerticalAlignment="Center" HorizontalAlignment="Left" 
+                        <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" 
                                    Text="{Binding ShowInfo}" FontSize="16"/>
                         <Button  Margin="0,0,51,0"  VerticalAlignment="Center" HorizontalAlignment="Right"  Width="50"  Height="34" 
                                  BorderThickness="0" Background="LightGray" Foreground="Green" 
@@ -28,7 +28,7 @@
         </Grid.RowDefinitions>
         <Rectangle Margin="-20,0,-20,0" Fill="White" Panel.ZIndex="0" Grid.Row="0"/>
         <Button Panel.ZIndex="1" Grid.Row="0" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" 
-                Content="新增联系人" FontSize="12" Click="AddAddrItem"/>
+                Content="新增联系人" FontSize="16" Click="AddAddrItem"/>
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
             <ItemsControl ItemTemplate="{StaticResource addrItem}" ItemsSource="{Binding AddrList, UpdateSourceTrigger=PropertyChanged}"/>
         </ScrollViewer>
