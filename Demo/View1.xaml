@@ -10,11 +10,11 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <Image Style="{StaticResource ExpandImageStyle}" Source="/Demo;component/Resource/Images/v1.jpg" Width="80" Height="80"/>
+        <Image Style="{DynamicResource ExpandImageStyle}" Source="/Demo;component/Resource/Images/v1.jpg" Width="80" Height="80"/>
         <StackPanel Grid.Column="1">
-            <Image Style="{StaticResource ExpandImageStyle}" Source="/Demo;component/Resource/Images/v1.jpg" Width="80" Height="80"/>
-            <Image Style="{StaticResource ExpandImageStyle}" Source="/Demo;component/Resource/Images/v1.jpg" Width="80" Height="80"/>
-            <Image Style="{StaticResource ExpandImageStyle}" Source="/Demo;component/Resource/Images/v1.jpg" Width="80" Height="80"/>
+            <Image Style="{DynamicResource ExpandImageStyle}" Source="/Demo;component/Resource/Images/v1.jpg" Width="80" Height="80" Margin="0,5,0,0"/>
+            <Image Style="{DynamicResource ExpandImageStyle}" Source="/Demo;component/Resource/Images/v1.jpg" Width="80" Height="80" Margin="0,5,0,0"/>
+            <Image Style="{DynamicResource ExpandImageStyle}" Source="/Demo;component/Resource/Images/v1.jpg" Width="80" Height="80" Margin="0,5,0,0"/>
         </StackPanel>
     </Grid>
 </UserControl>

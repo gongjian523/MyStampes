@@ -21,6 +21,7 @@ namespace Demo
     public partial class MainWindow : Window
     {
         private View1 view1 = new View1();
+        private View2 view2 = new View2();
 
         public MainWindow()
         {
@@ -31,6 +32,11 @@ namespace Demo
         private void EnterView1(object sender, RoutedEventArgs e)
         {
             ContentFrame.Navigate(view1);
+        }
+
+        private void EnterView2(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(view2);
         }
         
     }
