@@ -5,6 +5,14 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStampes", "MyStampes\MyStampes.csproj", "{53F0235A-F16A-40EC-9FF7-57B9C0C945C5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{114BD71F-FBCB-4B29-9355-219812EB38B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStampes.Controls", "MyStampes.Controls\MyStampes.Controls.csproj", "{7133B074-3999-4362-BAF8-5CDC8D79F1A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{FD9BE542-0A8F-493F-B35A-66C52B28B05F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{F19498AB-EE5F-482F-839B-E937791CFFCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +23,20 @@ Global
 		{53F0235A-F16A-40EC-9FF7-57B9C0C945C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53F0235A-F16A-40EC-9FF7-57B9C0C945C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53F0235A-F16A-40EC-9FF7-57B9C0C945C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7133B074-3999-4362-BAF8-5CDC8D79F1A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7133B074-3999-4362-BAF8-5CDC8D79F1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7133B074-3999-4362-BAF8-5CDC8D79F1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7133B074-3999-4362-BAF8-5CDC8D79F1A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F19498AB-EE5F-482F-839B-E937791CFFCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F19498AB-EE5F-482F-839B-E937791CFFCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F19498AB-EE5F-482F-839B-E937791CFFCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F19498AB-EE5F-482F-839B-E937791CFFCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7133B074-3999-4362-BAF8-5CDC8D79F1A0} = {114BD71F-FBCB-4B29-9355-219812EB38B0}
+		{F19498AB-EE5F-482F-839B-E937791CFFCC} = {FD9BE542-0A8F-493F-B35A-66C52B28B05F}
 	EndGlobalSection
 EndGlobal

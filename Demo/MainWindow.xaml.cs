@@ -1,7 +1,5 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,35 +12,32 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MyStampes.AddrBook;
-using MyStampes.Log;
 
-namespace MyStampes
+namespace Demo
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        private LogListView logListView = new LogListView();
-        private AddrBookView addrBookView = new AddrBookView();
+        private View1 view1 = new View1();
+        private View2 view2 = new View2();
 
         public MainWindow()
         {
             InitializeComponent();
-            ContentFrame.Navigate(logListView);
+            ContentFrame.Navigate(view1);
         }
 
-        private void EnterLogList(object sender, RoutedEventArgs e)
+        private void EnterView1(object sender, RoutedEventArgs e)
         {
-            ContentFrame.Navigate(logListView);
+            ContentFrame.Navigate(view1);
         }
 
-        private void EnterAddrBook(object sender, RoutedEventArgs e)
+        private void EnterView2(object sender, RoutedEventArgs e)
         {
-            ContentFrame.Navigate(addrBookView);
+            ContentFrame.Navigate(view2);
         }
+        
     }
-
 }

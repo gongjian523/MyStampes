@@ -1,2 +1,15 @@
-/MyStampes/bin/Debug
-/MyStampes/obj/Debug
+Debug
+/packages/EntityFramework.6.0.0/Content
+/packages/*.gitignore
+System.Data.SQLite.1.0.103
+System.Data.SQLite.Core.1.0.103
+*.nupkg
+*.xdt
+*.transform
+System.Data.SQLite.EF6.dll
+*.ps1
+*.dll
+/packages/*.config
+/packages/EntityFramework.6.0.0/lib/net40
+/packages/EntityFramework.6.0.0/lib/net45
+/packages/EntityFramework.6.0.0/tools
