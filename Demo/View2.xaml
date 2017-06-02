@@ -3,29 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Grid.Resources>
-            <Style x:Key="GreenThemTextBox" TargetType="{x:Type TextBox}">
-                <Setter Property="BorderBrush" Value="green"/>
-                <Setter Property="BorderThickness" Value="5"/>
-            </Style>
         </Grid.Resources>
-        <TextBox   Width="100" Height="30"  
-                   BorderThickness="2" 
-                   BorderBrush="#16A085"
-                   Foreground="Green"
-                   VerticalContentAlignment="Center" 
-                   >
-            
-            <TextBox.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="4"/>
-                    <Setter Property="BorderBrush" Value="#16A085"/>
-                </Style>
-            </TextBox.Resources>
-        </TextBox >
-               
+       
+        <TextBox HorizontalAlignment="Left" Height="30" FontSize="15"  TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="150" Style="{DynamicResource ThemTextBoxStyle}" VerticalContentAlignment="Center" />
+
+        <Button Width="100" Height="30"  HorizontalAlignment="Left"  Style="{StaticResource ThemButtonStyle}" Content="1"/>
+
+        
+
     </Grid>
 </UserControl>

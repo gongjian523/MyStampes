@@ -6,6 +6,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MyStampes.Controls;component/Style/ControlStyles.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MyStampes.Controls;component/Style/AccentColors.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

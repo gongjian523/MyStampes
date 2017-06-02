@@ -32,4 +32,42 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="ThemButtonStyle"  TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource ThemeColorBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"  BorderThickness="0" CornerRadius =" 4">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource MouseOverThemeColorBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ThemTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="bg" BorderThickness="2" CornerRadius =" 4">
+                        <ScrollViewer x:Name="PART_ContentHost" />
+                        <!--<ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>-->
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TextBox.IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="bg"  Value="{DynamicResource MouseOverThemeColorBrush}" />
+                        </Trigger>
+                        <Trigger Property="TextBox.IsMouseOver" Value="False">
+                            <Setter Property="BorderBrush"  TargetName="bg" Value="{DynamicResource ThemeColorBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
