@@ -3,9 +3,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Color x:Key="ThemeGreenColor">#1ABC9C</Color>
-    <Color x:Key="MouseOverThemeGreenColor">#16A085</Color>
-
     <SolidColorBrush x:Key="ThemeGreenColorBrush" Color ="#1ABC9C"/>
+    
+    <Color x:Key="MouseOverThemeGreenColor">#16A085</Color>
     <SolidColorBrush x:Key="MouseOverThemeGreenColorBrush" Color ="#16A085"/>
 
     <Color x:Key="BgGrayColor">#ECF0F1</Color>
