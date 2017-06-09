@@ -9,10 +9,24 @@
     <Grid>
         <Grid.Resources>
         </Grid.Resources>
-       
-        <TextBox HorizontalAlignment="Left" Height="30" FontSize="15"  TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="150" Style="{DynamicResource ThemTextBoxStyle}" VerticalContentAlignment="Center" />
-
-        <Button Width="100" Height="30"  HorizontalAlignment="Left"  Style="{StaticResource ThemButtonStyle}" Content="1"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Style="{DynamicResource ThemTextBoxStyle}"  Height="30" Width="100"  HorizontalAlignment="Left" VerticalAlignment="Top"  
+                 Text="TextBox"  FontSize="15" TextWrapping="NoWrap"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Column="1"  Style="{StaticResource ThemButtonStyle}"  Width="100" Height="30"  HorizontalAlignment="Left"  Content="1"/>
+        <Button Grid.Column="2"  Style="{StaticResource MainNavButton}"  Width="50" Height="50" Content="日期"/>
 
         
 

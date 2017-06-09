@@ -2,12 +2,14 @@
                     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Color x:Key="ThemeColor">#1ABC9C</Color>
-    <Color x:Key="MouseOverThemeColor">#16A085</Color>
+    <Color x:Key="ThemeGreenColor">#1ABC9C</Color>
+    <Color x:Key="MouseOverThemeGreenColor">#16A085</Color>
 
-    <SolidColorBrush x:Key="ThemeColorBrush" Color ="#1ABC9C"/>
-    <SolidColorBrush x:Key="MouseOverThemeColorBrush" Color ="#16A085"/>
+    <SolidColorBrush x:Key="ThemeGreenColorBrush" Color ="#1ABC9C"/>
+    <SolidColorBrush x:Key="MouseOverThemeGreenColorBrush" Color ="#16A085"/>
 
+    <Color x:Key="BgGrayColor">#ECF0F1</Color>
+    <SolidColorBrush x:Key="BgGrayColorBrush" Color ="#ECF0F1"/>
 
     
 </ResourceDictionary>
