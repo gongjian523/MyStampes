@@ -26,9 +26,7 @@
         <TextBox Style="{DynamicResource ThemTextBoxStyle}"  Height="30" Width="100"  HorizontalAlignment="Left" VerticalAlignment="Top"  
                  Text="TextBox"  FontSize="15" TextWrapping="NoWrap"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Button Grid.Column="1"  Style="{StaticResource ThemButtonStyle}"  Width="100" Height="30"  HorizontalAlignment="Left"  Content="1"/>
-        <Button Grid.Column="2"  Style="{StaticResource MainNavButton}"  Width="50" Height="50" Content="日期"/>
-
-        
-
+        <Button Grid.Column="2"  Style="{StaticResource ThemButtonStyle}"  Width="50" Height="50" Content="日期"/>
+        <RadioButton IsChecked="True"/>
     </Grid>
 </UserControl>

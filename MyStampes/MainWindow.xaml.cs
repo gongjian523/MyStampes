@@ -52,6 +52,12 @@ namespace MyStampes
         {
             Close();
         }
+
+        private void EnterContenView(object sender, RoutedEventArgs e)
+        {
+            CoverView.Visibility = System.Windows.Visibility.Hidden;
+            ContentView.Visibility = System.Windows.Visibility.Visible;
+        }
     }
 
 }
