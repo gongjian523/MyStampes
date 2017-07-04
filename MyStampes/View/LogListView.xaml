@@ -3,27 +3,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cvt="clr-namespace:MyStampes.Converter"
+             xmlns:ctrls="clr-namespace:MyStampes.Controls.Controls;assembly=MyStampes.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <cvt:SelectedItemIndexBkColorBrushConverter x:Key="SelectedItemIndexBkColorBrushConverter"/>
+    </UserControl.Resources>
     <Grid Margin="20,0,20,0">
         <Grid.Resources>
             <DataTemplate x:Key="logItem">
-                <Border Height="36" Margin="0,0,0,5" Background="LightGray" BorderThickness="1" BorderBrush="Black">
-                    <Grid >
+                <Grid Height="36" Background="{Binding Index, Converter={StaticResource SelectedItemIndexBkColorBrushConverter}}">
+                    <Grid  x:Name="NormalRoot" Visibility="Visible">
                         <TextBlock Margin="5,0,0,0" Width="90"  VerticalAlignment="Center" HorizontalAlignment="Left" 
                                    Text="{Binding Date, StringFormat={}{0:yyyy/MM/dd}}" FontSize="16"/>
                         <TextBlock Margin="100,0,186,0" VerticalAlignment="Center"  HorizontalAlignment="Stretch" 
                                    Text="{Binding Info}" FontSize="16"/>
                         <TextBlock Margin="0,0,101,0" VerticalAlignment="Center" HorizontalAlignment="Right"  Width="80"    
                                    Text="{Binding Price, StringFormat={}{0:}元 }" FontSize="16"/>
-                        <Button  Margin="0,0,51,0"  VerticalAlignment="Center" HorizontalAlignment="Right"  Width="50"  Height="34" 
+                    </Grid >
+                    <Grid x:Name="MouseOnRoot" Background="{StaticResource ListItemSelectedCololrBrush}" Visibility="Collapsed">
+                        <TextBlock Margin="5,0,0,0" Width="90"  VerticalAlignment="Center" HorizontalAlignment="Left" 
+                                   Text="{Binding Date, StringFormat={}{0:yyyy/MM/dd}}" FontSize="16"/>
+                        <TextBlock Margin="100,0,186,0" VerticalAlignment="Center"  HorizontalAlignment="Stretch" 
+                                   Text="{Binding Info}" FontSize="16"/>
+                        <TextBlock Margin="0,0,101,0" VerticalAlignment="Center" HorizontalAlignment="Right"  Width="80"    
+                                   Text="{Binding Price, StringFormat={}{0:}元 }" FontSize="16"/>
+                        <!--<Button  Margin="0,0,51,0"  VerticalAlignment="Center" HorizontalAlignment="Right"  Width="50"  Height="34" 
                                  BorderThickness="0" Background="LightGray" Foreground="Green" 
-                                 Content="编辑" FontSize="16" Click="EidtLogItem" Tag="{Binding}" />
+                                 Content="编辑" FontSize="16" Click="EidtLogItem" Tag="{Binding}" />-->
+                        
+                        
+                        <!--<ctrls:IconBtn  Style="{DynamicResource WithPngButtonStyle}" Margin="0,0,51,0"  VerticalAlignment="Center" HorizontalAlignment="Right"  Width="50"  Height="34" 
+                                 Click="EidtLogItem"   NomalPic="/MyStampes;component/Resource/Images/edit.png" 
+                                        MouseOnPic="/MyStampes;component/Resource/Images/delete.png"/>-->
+
+                        <Button  Style="{DynamicResource WithPngButtonStyle}" Margin="0,0,51,0"  VerticalAlignment="Center" HorizontalAlignment="Right"  Width="50"  Height="34" 
+                                 Click="EidtLogItem"
+                                 ctrls:AttributesManagers.NormalPic="/MyStampes;component/Resource/Images/edit.png" 
+                                 ctrls:AttributesManagers.MouseOnPic="/MyStampes;component/Resource/Images/delete.png"/>
+
                         <Button  Margin="0,0,1,0" VerticalAlignment="Center" HorizontalAlignment="Right"  Width="50"  Height="34" 
                                  BorderThickness="0" Background="LightGray" Foreground="Red"
                                  Content="删除"  FontSize="16" Click="DelLogItem" Tag="{Binding}" />
                     </Grid>
-                </Border>
+                </Grid>
+                <DataTemplate.Triggers>
+                    <Trigger Property="Grid.IsMouseOver" Value="False">
+                        <Setter Property="Visibility" TargetName="NormalRoot"  Value="Visible" />
+                        <Setter Property="Visibility" TargetName="MouseOnRoot"  Value="Collapsed" />
+                    </Trigger>
+                    <Trigger Property="Grid.IsMouseOver" Value="True">
+                        <Setter Property="Visibility" TargetName="NormalRoot"  Value="Collapsed" />
+                        <Setter Property="Visibility" TargetName="MouseOnRoot"  Value="Visible" />
+                    </Trigger>
+                </DataTemplate.Triggers>
             </DataTemplate>
         </Grid.Resources>
         <Grid.RowDefinitions>
@@ -31,8 +65,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Rectangle Margin="-20,0,-20,0" Fill="White" Panel.ZIndex="0" Grid.Row="0"/>
-        <Button Panel.ZIndex="1" Grid.Row="0" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right"  
-                Content="新增日志"  FontSize="16" Click="AddLogItem"/>
+        <Button Style="{StaticResource ThemButtonStyle}" Panel.ZIndex="1" Grid.Row="0" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                Content="新增日志" FontSize="16" Click="AddLogItem"/>
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
             <ItemsControl ItemTemplate="{StaticResource logItem}" ItemsSource="{Binding LogList}"/>
         </ScrollViewer>

@@ -23,5 +23,7 @@ namespace MyStampes.ViewModel
         public int SellerId { get; set; }
 
         public string SellerInfo { get; set; }
+
+        public int Index { get; set; }
     }
 }

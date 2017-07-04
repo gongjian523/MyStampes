@@ -13,6 +13,9 @@
     <Color x:Key="BgGrayColor">#ECF0F1</Color>
     <SolidColorBrush x:Key="BgGrayColorBrush" Color ="#ECF0F1"/>
 
+    <Color x:Key="ListItemSelectedCololr">#BDC3C7</Color>
+    <SolidColorBrush x:Key="ListItemSelectedCololrBrush" Color ="#BDC3C7"/>
+
 
     <!--ACCENT COLORS-->
     <Color x:Key="HighlightColor">#16A085</Color>

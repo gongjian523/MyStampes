@@ -41,7 +41,7 @@
             </Grid.ColumnDefinitions>
             <Grid >
                 <Grid VerticalAlignment="Top" >
-                    <RadioButton Style="{DynamicResource MainNavButton}" Height="48" VerticalAlignment="Top" Click="EnterLogList" Content="日志"/>
+                    <RadioButton Style="{DynamicResource MainNavButton}" Height="48" VerticalAlignment="Top" Click="EnterLogList" Content="日志" IsChecked="True"/>
                     <RadioButton Style="{DynamicResource MainNavButton}" Height="48" Margin="0,48,0,0" VerticalAlignment="Top" Click="EnterAddrBook" Content="通讯录"  />
                 </Grid>
                 <Rectangle Width="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Fill="{StaticResource AccentColorBrush}"/>

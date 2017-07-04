@@ -39,5 +39,7 @@ namespace MyStampes.ViewModel
 
         public string ShowInfo { get; set; }
 
+        public int Index { get; set; }
+
     }
 }

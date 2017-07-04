@@ -104,6 +104,7 @@ namespace MyStampes.SQLiteHerlper
             if (data == null)
                 return addrList;
 
+            int index = 0;
 
             while (data.Read())
             {
@@ -133,6 +134,8 @@ namespace MyStampes.SQLiteHerlper
                 }
                 else
                     addr.ShowInfo = addr.Info1Title + addr.Info1;
+
+                addr.Index = (++index);
 
                 addrList.Add(addr);
             }
@@ -180,21 +183,23 @@ namespace MyStampes.SQLiteHerlper
             if (data == null)
                 return logList;
 
+            int index = 0;
 
             while (data.Read())
             {
-                LogItem addr = new LogItem();
+                LogItem log = new LogItem();
 
-                addr.Id = Convert.ToInt16(data["Id"].ToString());
-                addr.Info = data["Info"].ToString();
-                addr.Price = (float)Convert.ToDouble(data["Price"].ToString());
-                addr.SellerId = Convert.ToInt16(data["SellerId"].ToString());
-                addr.SellerInfo = data["SellerInfo"].ToString();
-                addr.Date = Convert.ToDateTime(data["Date"]);
-                addr.Status = data["Status"].ToString();
-                addr.SpecInfo = data["SpecInfo"].ToString();
+                log.Id = Convert.ToInt16(data["Id"].ToString());
+                log.Info = data["Info"].ToString();
+                log.Price = (float)Convert.ToDouble(data["Price"].ToString());
+                log.SellerId = Convert.ToInt16(data["SellerId"].ToString());
+                log.SellerInfo = data["SellerInfo"].ToString();
+                log.Date = Convert.ToDateTime(data["Date"]);
+                log.Status = data["Status"].ToString();
+                log.SpecInfo = data["SpecInfo"].ToString();
+                log.Index = (++index);
 
-                logList.Add(addr);
+                logList.Add(log);
             }
 
             return logList;
