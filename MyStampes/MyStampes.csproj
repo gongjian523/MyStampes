@@ -90,6 +90,10 @@
     <Compile Include="View\AddAddrItemView.xaml.cs">
       <DependentUpon>AddAddrItemView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Resource\Xmls\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\AddLogItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

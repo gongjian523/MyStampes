@@ -27,6 +27,26 @@
                  Text="TextBox"  FontSize="15" TextWrapping="NoWrap"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Button Grid.Column="1"  Style="{StaticResource ThemButtonStyle}"  Width="100" Height="30"  HorizontalAlignment="Left"  Content="1"/>
         <Button Grid.Column="2"  Style="{StaticResource ThemButtonStyle}"  Width="50" Height="50" Content="日期"/>
-        <RadioButton IsChecked="True"/>
+        <RadioButton Grid.Column="3" IsChecked="True"/>
+        <Rectangle Grid.Row="1"  Fill="Red" Width="40" Height="40">
+            <Rectangle.OpacityMask>
+                <VisualBrush Visual="{DynamicResource appbar_add}" Stretch="Fill" />
+            </Rectangle.OpacityMask>
+        </Rectangle>
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="Red" Width="40" Height="40">
+            <Rectangle.OpacityMask>
+                <VisualBrush Visual="{DynamicResource appbar_delete}" Stretch="Fill" />
+            </Rectangle.OpacityMask>
+        </Rectangle>
+        <Rectangle Grid.Row="1" Grid.Column="2" Fill="Red" Width="40" Height="40">
+            <Rectangle.OpacityMask>
+                <VisualBrush Visual="{DynamicResource appbar_edit}" Stretch="Fill" />
+            </Rectangle.OpacityMask>
+        </Rectangle>
+        <Rectangle Grid.Row="1" Grid.Column="3" Fill="Red" Width="40" Height="40">
+            <Rectangle.OpacityMask>
+                <VisualBrush Visual="{DynamicResource appbar_align_right}" Stretch="Fill" />
+            </Rectangle.OpacityMask>
+        </Rectangle>
     </Grid>
 </UserControl>

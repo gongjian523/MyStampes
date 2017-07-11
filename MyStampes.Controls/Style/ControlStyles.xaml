@@ -52,6 +52,57 @@
         </Style.Triggers>
     </Style>
 
+    <!--<Style x:Key="IconButtonStyle"  TargetType="{x:Type Button}">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="transparent"/>
+        <Setter Property="Template" >
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle x:Name="bkRectagnle" >
+                        <Rectangle.OpacityMask>
+                            --><!--<VisualBrush Visual="{Binding Path=Tag, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill" />--><!--
+                            <VisualBrush Visual="{DynamicResource appbar_edit}" Stretch="Fill" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    --><!--<ControlTemplate.Triggers>
+                        <Trigger  Property="IsMouseOver" Value="True">
+                            --><!--<Setter TargetName="bkRectagnle" Property="Fill" Value="{DynamicResource MouseOverThemeGreenColorBrush}"/>--><!--
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="bkRectagnle" Property="Fill" Value="0xFFFFFFFF"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>--><!--
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+    <Style x:Key="IconButtonStyle"  TargetType="{x:Type Button}">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Height" Value="16"/>
+        <Setter Property="Width" Value="16"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Template" >
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle x:Name="bkRectagnle"  >
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Visual="{Binding Path=IconCanvas, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <ControlTemplate.Triggers>
+                        <Trigger  Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bkRectagnle" Property="Fill" Value="{DynamicResource MouseOverThemeGreenColorBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="bkRectagnle" Property="Fill" Value="{DynamicResource IconBtnUnselectedColorBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 
     <Style x:Key="WithPngButtonStyle"  TargetType="{x:Type Button}">
         <Setter Property="Cursor" Value="Hand"/>
@@ -61,7 +112,7 @@
                 <ControlTemplate>
                     <Grid>
                         <Image x:Name="NormalPic" Source="{Binding Path=NormalPic, RelativeSource={RelativeSource TemplatedParent}}"/>
-                        <Image x:Name="MouseOnPic" Source="{Binding Path=ctrls:AttributesManagers.MouseOnPic, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        <Image x:Name="MouseOnPic" Source="{Binding Path=MouseOnPic, RelativeSource={RelativeSource TemplatedParent}}"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger  Property="IsMouseOver" Value="True">

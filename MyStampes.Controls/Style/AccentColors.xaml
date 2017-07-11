@@ -10,6 +10,9 @@
     <Color x:Key="MouseOverThemeGreenColor">#16A085</Color>
     <SolidColorBrush x:Key="MouseOverThemeGreenColorBrush" Color ="#16A085"/>
 
+    <Color x:Key="IconBtnUnselectedColor">#ECF0F1</Color>
+    <SolidColorBrush x:Key="IconBtnUnselectedColorBrush" Color ="#ECF0F1"/>
+
     <Color x:Key="BgGrayColor">#ECF0F1</Color>
     <SolidColorBrush x:Key="BgGrayColorBrush" Color ="#ECF0F1"/>
 
