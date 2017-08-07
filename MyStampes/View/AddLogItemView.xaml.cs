@@ -1,4 +1,5 @@
-﻿using MyStampes.SQLiteHerlper;
+﻿using MahApps.Metro.Controls;
+using MyStampes.SQLiteHerlper;
 using MyStampes.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace MyStampes.View
     /// <summary>
     /// Interaction logic for AddLogItemView.xaml
     /// </summary>
-    public partial class AddLogItemView : Window
+    public partial class AddLogItemView : MetroWindow
     {
         private LogItem newLog;
         private LogItem oldLog;

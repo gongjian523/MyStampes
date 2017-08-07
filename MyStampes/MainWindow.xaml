@@ -8,6 +8,7 @@
         MinHeight="700" 
         Width="1000"
         MinWidth ="1000"
+        TitlebarHeight="50"       
         WindowTitleBrush="{DynamicResource ThemeGreenColorBrush}"
         BorderBrush="{DynamicResource ThemeGreenColorBrush}"
         BorderThickness="1"

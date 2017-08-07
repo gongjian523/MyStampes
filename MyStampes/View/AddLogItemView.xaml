@@ -1,6 +1,11 @@
-﻿<Window x:Class="MyStampes.View.AddLogItemView"
+﻿<Controls:MetroWindow x:Class="MyStampes.View.AddLogItemView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        WindowTitleBrush="{DynamicResource ThemeGreenColorBrush}"
+        GlowBrush="{DynamicResource ThemeGreenColorBrush}"
+       
+         
         Title="" 
         Height="400" 
         Width="600"
@@ -59,4 +64,4 @@
         <Button x:Name="AddLogItemBtn" Grid.Row="3" Height="30" Width="100" Content="增加" FontSize="16" Click="AddLogItem"/>
         <Button x:Name="EditLogItemBtn" Grid.Row="3" Height="30" Width="100"  Content="编辑" FontSize="16" Click="EditLogItem" />
     </Grid>
-</Window>
+</Controls:MetroWindow>
