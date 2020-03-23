@@ -42,6 +42,5 @@ namespace MyStampes.Controls.Controls
         public static readonly DependencyProperty IconCanvasProperty =
             DependencyProperty.Register("IconCanvas", typeof(Canvas), typeof(IconBtn));
 
-
     }
 }

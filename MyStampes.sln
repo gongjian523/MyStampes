@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStampes", "MyStampes\MyStampes.csproj", "{53F0235A-F16A-40EC-9FF7-57B9C0C945C5}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{FD9BE542-0A8F-493F-B35A-66C52B28B05F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{F19498AB-EE5F-482F-839B-E937791CFFCC}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MyStampesSetup", "MyStampesSetup\MyStampesSetup.vdproj", "{2A6784D8-E2B9-4128-B62C-A0EBE0B89628}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,8 @@ Global
 		{F19498AB-EE5F-482F-839B-E937791CFFCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F19498AB-EE5F-482F-839B-E937791CFFCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F19498AB-EE5F-482F-839B-E937791CFFCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A6784D8-E2B9-4128-B62C-A0EBE0B89628}.Debug|Any CPU.ActiveCfg = Debug
+		{2A6784D8-E2B9-4128-B62C-A0EBE0B89628}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,5 +42,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7133B074-3999-4362-BAF8-5CDC8D79F1A0} = {114BD71F-FBCB-4B29-9355-219812EB38B0}
 		{F19498AB-EE5F-482F-839B-E937791CFFCC} = {FD9BE542-0A8F-493F-B35A-66C52B28B05F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5792D1CA-45EF-4F65-8288-C93292CD2243}
 	EndGlobalSection
 EndGlobal
